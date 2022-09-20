@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Clicker</title>
+    <link rel="stylesheet" href="CSS\buttonclick.css">
+</head>
+<body>
+    <div id="container">
+        <div id="navbar">
+            <h1 style="bold" >Dojonary</h1>
+            <input type="text" name="Search" placeholder="Search">
+            <button class="loginbutton" onclick="login(this)">Login</button>
+        </div>
+        <div Id="body">
+            <div id="leftcolumn">
+                <div class="info">
+                    <div class="entry">
+                        <h2>ninja</h2>
+                        <p>noun</p>
+                        <p>Plural: ninjas</p>
+                        <button class="likebutton" onclick="alert('Ninja was liked')">13 likes</button>
+                        <p class="pract">A practioner skilled in the <span class="underline">Japanese<span>art of<span class="underline">ninjutsu<span></p>
+                    </div>
+                </div>
+            </div>
+            <div id="info2">
+                <div class="entry">
+                    <h2>ninja</h2>
+                    <p>noun</p>
+                    <p>Plural: ninjas</p>
+                    <button class="likebutton" onclick="alert('Ninja was liked')">37 Likes</button>
+                </div>
+                <p class="definition">A <span class="underlined">programmer</span> who breaks down problems with <span class="underlined">zen</span>-like focus</p>
+            </div>
+        </div>
+        <div id="rightcolumn">
+            <div id="section">
+                <h2 class="entry">Dojonary is defined by <span class=bold">YOU</span></h2>
+                <button class="adddef" onclick="removeButton(this)">Add Definition</button>
+            </div>
+        </div>
+    </div>
+    <script src="buttonclick.js"></script>
+    </div>
+</body>
+</html>
