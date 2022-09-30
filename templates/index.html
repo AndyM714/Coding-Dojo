@@ -1,45 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=`, initial-scale=1.0">
-    <title>Playground</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+
+        body{
+            text-align: center;
+           
+            
+        }
+        .plus{
+        
+            height: 45px;
+            width: 100px;
+            border: 3px solid black;
+            border-radius: 10px;
+            background-color: rgb(20, 70, 234);
+        }
+        .reset{
+            height: 45px;
+            width: 100px;
+            border: 3px solid black;
+            border-radius: 10px;
+            background-color: red;
+            
+        }
+
+   </style>
 </head>
-<style>
-    .container {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-
-        
-    }
-
-    h1 {
-        display: flex;
-        justify-content: center;
-    }
-
-    .box {
-        width: 200px;
-        height: 200px;
-        border: 3px solid black;
-        background-color: {{color}};
-        margin: 10px;
-        border-radius: 10px;
-        
-
-    }
-</style>
-
 <body>
-    <h1>WELCOME</h1>
-    <div class="container">
-        {% for i in range(0,boxes)%}
-            <div class="box"></div>
-        {% endfor %}
-    </div>
+    <h1>Counter</h1>
+    <h2>count= {{session['count']}} Time </h2>
+    <h2>visits = {{session['visits']}} Time</h2>
+    <form action="/count" method="post"><button class="plus">Click</form>
+    <form action="/reset" method="post"><button class="reset">reset</form>
+    
 </body>
-
 </html>

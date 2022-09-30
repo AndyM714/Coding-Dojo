@@ -1,26 +1,30 @@
+from operator import methodcaller
+from flask import Flask, render_template, request, redirect, session
+app = Flask(__name__)
+app.secret_key = 'counts'
 
-
-from flask import Flask, render_template
-app = Flask(__name__)    
-
-@app.route('/play')          
+@app.route('/')
 def index():
-    return render_template('index.html', boxes = 3, color = "cyan")
-
-@app.route('/play/<int:number>')
-def play_number(number):
-    boxes = int(number)
-    return render_template('index.html', boxes = boxes, color = "cyan")
-
-@app.route('/play/<int:number>/<string:color>')
-def play_color_int(number, color):
-    boxes = int(number)
-    bcolor=color
-    return render_template('index.html', boxes = boxes, color = bcolor)
+    session['count'] = 1
+    session['visits'] = 1
+    return render_template('index.html')
 
 
+@app.route('/count', methods=['post'])
+def count():
+    session['count'] += 1
+    session['visits'] += 1
+    return render_template('index.html')
+
+@app.route('/reset', methods=['post'])
+def destroy_session():
+    return redirect('/')
 
 
 
-if __name__=="__main__":    
+
+
+
+
+if __name__=="__main__":
     app.run(debug=True) 
