@@ -1,0 +1,4 @@
+com\andy\fruityloops\controllers\MainController.class
+com\andy\fruityloops\models\Item.class
+com\andy\fruityloops\ServletInitializer.class
+com\andy\fruityloops\FruityloopsApplication.class
